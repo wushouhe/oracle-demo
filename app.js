@@ -19,7 +19,7 @@ var notificationContract = NotificationContract.at(config.notificationService.ad
 
 
 function listenOn(contract) {
-  contract.allEvents({fromBlock: 0, toBlock: 'latest'}, function (err, result) {
+  contract.allEvents(function (err, result) {
     if (err) {
       debug('Error listening to contract events: ', err);
       return console.error('Error:', err);
@@ -49,7 +49,6 @@ function listenOn(contract) {
         task.BuyerBookingState = data.bookingState;
         task.BuyerLastUploadDate = entGen.DateTime(lastUploadDate.toDate());
       }
-
 
       debug('Saving event to table', task);
       table.merge(task);

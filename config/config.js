@@ -24,7 +24,7 @@ var config = {
     azureStorage : {
       name : process.env.AZURE_STORAGE_ACCOUNT,
       key: process.env.AZURE_STORAGE_ACCESS_KEY,
-      tableName: 'development'
+      tableName:  process.env.AZURE_STORAGE_TABLE_NAME  ||'development'
     }
   },
 
@@ -47,7 +47,7 @@ var config = {
     azureStorage : {
       name : process.env.AZURE_STORAGE_ACCOUNT,
       key: process.env.AZURE_STORAGE_ACCESS_KEY,
-      tableName: 'test'
+      tableName: process.env.AZURE_STORAGE_TABLE_NAME || 'test'
     }
   },
 
@@ -70,7 +70,7 @@ var config = {
     azureStorage : {
       name : process.env.AZURE_STORAGE_ACCOUNT,
       key: process.env.AZURE_STORAGE_ACCESS_KEY,
-      tableName: 'development'
+      tableName: process.env.AZURE_STORAGE_TABLE_NAME || 'production'
     }
   }
 };
