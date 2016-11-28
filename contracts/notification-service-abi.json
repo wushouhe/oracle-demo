@@ -1,0 +1,94 @@
+[
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "referenceId",
+        "type": "string"
+      },
+      {
+        "name": "buyer",
+        "type": "address"
+      },
+      {
+        "name": "seller",
+        "type": "address"
+      },
+      {
+        "name": "contractState",
+        "type": "uint256"
+      },
+      {
+        "name": "currencyCode",
+        "type": "string"
+      },
+      {
+        "name": "price",
+        "type": "uint256"
+      },
+      {
+        "name": "bookingState",
+        "type": "uint256"
+      },
+      {
+        "name": "lastUpdated",
+        "type": "uint256"
+      },
+      {
+        "name": "who",
+        "type": "string"
+      }
+    ],
+    "name": "contractState",
+    "outputs": [],
+    "payable": false,
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "referenceId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "buyer",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "seller",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "contractState",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "price",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "bookingState",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "lastUpdated",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "who",
+        "type": "string"
+      }
+    ],
+    "name": "ContractState",
+    "type": "event"
+  }
+]
