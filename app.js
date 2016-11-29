@@ -3,7 +3,7 @@
 var Web3 = require('web3');
 
 var config = require('./config/config');
-var debug = require('debug')('eventhub-oracle');
+var debug = require('debug')('oracle-demo');
 var table = require('./azure-table');
 var moment = require('moment');
 var _ = require('underscore')

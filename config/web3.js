@@ -1,7 +1,7 @@
 'use strict';
 
 var net = require('net');
-var debug = require('debug')('eventhub-oracle');
+var debug = require('debug')('oracle-demo');
 
 module.exports = function (web3, config) {
   if(web3.isConnected()) {

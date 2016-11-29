@@ -2,7 +2,7 @@
 var path = require('path');
 var azure = require('azure-storage');
 var moment = require('moment');
-var debug = require('debug')('eventhub-oracle');
+var debug = require('debug')('oracle-demo');
 var config = require('./config/config');
 var Promise = require('bluebird')
 
@@ -19,6 +19,7 @@ tableService.createTableIfNotExists(tableName, function (error, result, response
   if (error) {
     console.error("Error creating table");
   }
+  debug('Successfully created table');
 });
 
 exports.insert = function (data) {
@@ -26,7 +27,8 @@ exports.insert = function (data) {
     if (error) {
       console.error(error);
     }
-  })
+    debug('Successfully saved to table');
+  });
 }
 
 exports.retrieve = function (partitionKey, rowKey) {
@@ -34,6 +36,7 @@ exports.retrieve = function (partitionKey, rowKey) {
     if (error) {
       console.error(error);
     }
+    debug('Successfully saved to table');
   });
 }
 
@@ -52,7 +55,7 @@ exports.merge = function (data) {
     if (error) {
       console.error(error);
     }
-    debug('Successfully saved to table',result, response);
+    debug('Successfully saved to table');
   });
 }
 
