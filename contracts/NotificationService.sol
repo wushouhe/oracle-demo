@@ -2,9 +2,9 @@ pragma solidity ^0.4.2;
 
 contract NotificationService {
 
-    event ContractState(string referenceId, address buyer, address seller, uint contractState, uint price, uint bookingState, uint lastUpdated, string who);
+    event ContractState(string referenceId, address seller, address buyer, uint buyerPrice, uint sellerPrice, int state, uint time);
 
-    function contractState(string referenceId, address buyer, address seller, uint contractState, uint price, uint bookingState, uint lastUpdated, string who) {
-        ContractState(referenceId, buyer, seller, contractState, price, bookingState, lastUpdated, who);
+    function contractState(string referenceId, address seller, address buyer, uint buyerPrice, uint sellerPrice, int state, uint time) {
+        ContractState(referenceId, seller, buyer, buyerPrice, sellerPrice, state, time);
     }
 }
