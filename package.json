@@ -1,5 +1,5 @@
 {
-  "name": "eventhub-oracle",
+  "name": "oracle-demo",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -24,12 +24,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CatalystCode/eventhub-oracle.git"
+    "url": "git+https://github.com/EthereumEx/oracle-demo.git"
   },
   "author": "Ali Hajimirza",
-  "license": "MIT",
+  "license": "GPL V3",
   "bugs": {
-    "url": "https://github.com/CatalystCode/eventhub-oracle/issues"
+    "url": "https://github.com/EthereumEx/oracle-demo/issues"
   },
-  "homepage": "https://github.com/CatalystCode/eventhub-oracle#readme"
+  "homepage": "https://github.com/EthereumEx/oracle-demo#readme"
 }
