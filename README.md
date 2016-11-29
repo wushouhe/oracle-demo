@@ -3,7 +3,7 @@
 ```bash
 $ git clone https://github.com/EthereumEx/oracle-demo
 $ cd oracle-demo
-$ npm install --production
+$ npm install --only=production
 ```
 ## Environment Variables
 ```bash
@@ -19,11 +19,11 @@ export IPC_PROVIDER=<path to IPC>
 ```
 
 ### To run with RPC
-Make sure the `IPC_PROVIDER` is **not** set.
+Make sure the `IPC_PROVIDER` environment variable is **not** set.
 
 ```bash
-export RPC_HOST=<RPC URL (default http://localhost)>
-export RPC_PORT=<RCP port (default 8545)>
+export RPC_HOST=<RPC URL (optional - default http://localhost)>
+export RPC_PORT=<RCP port (optional - default 8545)>
 ```
 
 ## Development
@@ -31,7 +31,7 @@ You need to download the development dependencies first.
 
 ```bash
 $ npm install --global gulp-cli
-$ npm install
+$ npm install --only=dev
 ```
 
 Then:
@@ -43,6 +43,7 @@ $ gulp
 ## Execution
 ```bash
 export NODE_ENV=production
+export DEBUG=oracle-demo (optional for debug messages)
 $ node app.js
 or
 $ npm start

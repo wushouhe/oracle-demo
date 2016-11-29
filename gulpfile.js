@@ -16,6 +16,8 @@ gulp.task('build', [
 
 gulp.task('develop', function() {
   process.env.DEBUG = 'oracle-demo';
+  process.env.ENV = 'development';
+
   nodemon({
     script: 'app.js',
     stdout: true,
