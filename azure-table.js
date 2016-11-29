@@ -45,7 +45,7 @@ exports.update = function(data) {
     if (error) {
       console.error(error);
     }
-    debug('Successfully saved to table',result, response);
+    debug('Successfully saved to table');
   });
 }
 
