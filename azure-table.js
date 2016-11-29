@@ -37,6 +37,15 @@ exports.retrieve = function (partitionKey, rowKey) {
   });
 }
 
+exports.update = function(data) {
+  tableService.insertOrReplaceEntity(tableName, data, function (error, result, response) {
+    if (error) {
+      console.error(error);
+    }
+    debug('Successfully saved to table',result, response);
+  });
+}
+
 
 exports.merge = function (data) {
   tableService.insertOrMergeEntity(tableName, data, function (error, result, response) {

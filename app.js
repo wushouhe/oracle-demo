@@ -32,26 +32,17 @@ function listenOn(contract) {
       var task = {
         PartitionKey: entGen.String(data.buyer + '_' + data.seller),
         RowKey: entGen.String(data.referenceId + '_' + data.buyer + '_' + data.seller),
-        CommonReferenceId: data.referenceId,
-        ContractState: data.contractState,
+        ReferenceId: data.referenceId,
+        ContractState: data.state,
         Buyer: data.buyer,
-        Seller: data.seller
+        Seller: data.seller,
+        BuyerPrice: data.buyerPrice,
+        SellerPrice: data.sellerPrice,
+        LastUpdated: entGen.DateTime(moment.unix(data.time).toDate())
       };
 
-      var lastUploadDate = moment.unix(data.lastUpdated);
-
-      if (data.who.toUpperCase() === 'S') {
-        task.SellerPrice = data.price;
-        task.SellerBookingState = data.bookingState;
-        task.SellerLastUploadDate = entGen.DateTime(lastUploadDate.toDate());
-      } else if (data.who.toUpperCase() === 'B') {
-        task.BuyerPrice = data.price;
-        task.BuyerBookingState = data.bookingState;
-        task.BuyerLastUploadDate = entGen.DateTime(lastUploadDate.toDate());
-      }
-
       debug('Saving event to table', task);
-      table.merge(task);
+      table.update(task);
     } catch  (err) {
       console.error('Could not parse event', (err));
     }
